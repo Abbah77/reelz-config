@@ -10,7 +10,7 @@ app = Flask(__name__)
 CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 # Global Read-Only Key for movie metadata extraction
-TMDB_API_KEY = "c18e77519198aa7f6c31bf0d9aa1787d" 
+TMDB_API_KEY = "1eef1496d59aa06f62e201ddce2741b4" 
 
 @app.route('/api/feed', methods=['GET'])
 def get_infinite_feed():
