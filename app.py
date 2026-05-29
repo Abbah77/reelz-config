@@ -16,23 +16,27 @@ TMDB_API_KEY = "844dba0bfd8f3a8a3a303ca000b9c69d"
 def get_infinite_feed():
     """Generates a dynamic scroll page list of trending films straight from TMDB"""
     page = request.args.get('page', default=1, type=int)
-    url = f"https://api.themoviedb.org/3/trending/movie/week?api_key={TMDB_API_KEY}&page={page}"
+    # Updated to an alternative high-velocity discovery route to ensure absolute data delivery
+    url = f"https://api.themoviedb.org/3/discover/movie?api_key={TMDB_API_KEY}&sort_by=popularity.desc&page={page}"
     
     try:
         response = requests.get(url).json()
         movies_data = []
         
         for item in response.get('results', []):
-            if not item.get('poster_path'):
-                continue
+            # Fallback pathing logic: ensure the card populates even if a poster asset is missing
+            poster = item.get('poster_path')
+            thumb_url = f"https://image.tmdb.org/t/p/w500{poster}" if poster else "https://images.unsplash.com/photo-1440404653325-ab127d49abc1?q=80&w=500"
+            
             movies_data.append({
                 "id": item.get('id'),
-                "title": item.get('title') or item.get('original_title'),
-                "thumbnail": f"https://image.tmdb.org/t/p/w500{item.get('poster_path')}"
+                "title": item.get('title') or item.get('original_title') or "Untitled Broadcast",
+                "thumbnail": thumb_url
             })
         return jsonify({"results": movies_data})
     except Exception as e:
         return jsonify({"error": str(e)}), 500
+
 
 @app.route('/api/search', methods=['GET'])
 def search_catalog():
