@@ -2,8 +2,8 @@
   "meta": {
     "schema_version": 1,
     "config_version": 2,
-    "min_app_version": 1,
-    "latest_app_version": 2,
+    "min_app_version": 4,
+    "latest_app_version": 5,
     "latest_apk_url": "https://github.com/yourusername/reelz-releases/releases/latest/download/reelz.apk",
     "changelog": "Added shorts config to remote config"
   },
