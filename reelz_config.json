@@ -234,12 +234,13 @@
     "firefox_android": "Mozilla/5.0 (Android 14; Mobile; rv:125.0) Gecko/125.0 Firefox/125.0"
   },
   "scanner": {
-    "direct_timeout_ms": 2000,
-    "webview_timeout_ms": 18000,
-    "global_timeout_ms": 25000,
-    "stagger_ms": 150,
-    "m3u8_pattern": "https?://[^\\s\"'\\<>]+\\.m3u8[^\\s\"'\\<>]*",
-    "mp4_pattern": "https?://[^\\s\"'\\<>]+\\.mp4[^\\s\"'\\<>]*"
+  "direct_timeout_ms": 2000,
+  "webview_timeout_ms": 18000,
+  "global_timeout_ms": 25000,
+  "stagger_ms": 150,
+  "m3u8_pattern": "https?://[^\\s\"'<>]+\\.m3u8[^\\s\"'<>]*",
+  "mp4_pattern": "https?://[^\\s\"'<>]+\\.mp4[^\\s\"'<>]*"
+  
   },
   "feature_flags": {
     "subtitles_enabled": true,
