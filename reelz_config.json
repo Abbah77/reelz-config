@@ -1,11 +1,11 @@
 {
   "meta": {
     "schema_version": 1,
-    "config_version": 2,
+    "config_version": 3,
     "min_app_version": 1,
     "latest_app_version": 2,
     "latest_apk_url": "https://github.com/yourusername/reelz-releases/releases/latest/download/reelz.apk",
-    "changelog": "Added shorts config to remote config"
+    "changelog": "Full remote control over ads, sources and feed config"
   },
   "tmdb": {
     "keys": [
@@ -77,21 +77,46 @@
   },
   "ads": {
     "enabled": true,
+    "applovin_sdk_key": "",
+    "mediation_provider": "max",
+    "placements": {
+      "banner_enabled": true,
+      "interstitial_enabled": true,
+      "rewarded_enabled": true,
+      "native_enabled": true,
+      "app_open_enabled": true,
+      "preroll_enabled": true
+    },
+    "interstitial_frequency": {
+      "min_ms_between": 180000,
+      "max_per_session": 6,
+      "content_opens_before_first": 2,
+      "every_n_plays": 2,
+      "retry_delay_ms": 30000
+    },
+    "preroll": {
+      "show_on_movies_only": true,
+      "min_minutes_between": 30,
+      "skip_on_resume": true,
+      "skip_on_quality_switch": true
+    },
     "networks": [
       {
-        "id": "admob",
+        "id": "applovin_max",
         "enabled": true,
-        "banner_id": "ca-app-pub-3940256099942544/6300978111",
-        "interstitial_id": "ca-app-pub-3940256099942544/1033173712",
-        "rewarded_id": "ca-app-pub-3940256099942544/5224354917",
-        "native_id": "ca-app-pub-3940256099942544/2247696110"
+        "banner_id": "",
+        "interstitial_id": "",
+        "rewarded_id": "",
+        "native_id": "",
+        "app_open_id": "",
+        "vast_tag_url": ""
       }
     ]
   },
   "stream_sources": [
-        {
-      "id": "vidlink_pro",
-      "name": "VidLink",
+    {
+      "id": "source_1",
+      "name": "Source 1",
       "enabled": true,
       "priority": 0,
       "requires_js": true,
@@ -108,8 +133,8 @@
       "origin": "https://vidlink.pro"
     },
     {
-      "id": "vidsrc_to",
-      "name": "VidSrc",
+      "id": "source_2",
+      "name": "Source 2",
       "enabled": true,
       "priority": 1,
       "requires_js": true,
@@ -126,8 +151,8 @@
       "origin": "https://vidsrc.to"
     },
     {
-      "id": "vidsrc_me",
-      "name": "VidSrc.me",
+      "id": "source_3",
+      "name": "Source 3",
       "enabled": true,
       "priority": 2,
       "requires_js": true,
@@ -143,8 +168,8 @@
       "origin": "https://vidsrc.me"
     },
     {
-      "id": "two_embed",
-      "name": "2Embed",
+      "id": "source_4",
+      "name": "Source 4",
       "enabled": true,
       "priority": 3,
       "requires_js": true,
@@ -160,8 +185,8 @@
       "origin": "https://www.2embed.cc"
     },
     {
-      "id": "embed_su",
-      "name": "EmbedSu",
+      "id": "source_5",
+      "name": "Source 5",
       "enabled": true,
       "priority": 4,
       "requires_js": true,
@@ -177,8 +202,8 @@
       "origin": "https://embed.su"
     },
     {
-      "id": "superembed",
-      "name": "SuperEmbed",
+      "id": "source_6",
+      "name": "Source 6",
       "enabled": false,
       "priority": 5,
       "requires_js": true,
@@ -194,8 +219,8 @@
       "origin": "https://superembed.stream"
     },
     {
-      "id": "autoembed",
-      "name": "AutoEmbed",
+      "id": "source_7",
+      "name": "Source 7",
       "enabled": false,
       "priority": 6,
       "requires_js": true,
@@ -211,8 +236,8 @@
       "origin": "https://autoembed.co"
     },
     {
-      "id": "smashystream",
-      "name": "SmashyStream",
+      "id": "source_8",
+      "name": "Source 8",
       "enabled": false,
       "priority": 7,
       "requires_js": true,
@@ -234,13 +259,12 @@
     "firefox_android": "Mozilla/5.0 (Android 14; Mobile; rv:125.0) Gecko/125.0 Firefox/125.0"
   },
   "scanner": {
-  "direct_timeout_ms": 2000,
-  "webview_timeout_ms": 18000,
-  "global_timeout_ms": 25000,
-  "stagger_ms": 150,
-  "m3u8_pattern": "https?://[^\\s\"'<>]+\\.m3u8[^\\s\"'<>]*",
-  "mp4_pattern": "https?://[^\\s\"'<>]+\\.mp4[^\\s\"'<>]*"
-  
+    "direct_timeout_ms": 2000,
+    "webview_timeout_ms": 18000,
+    "global_timeout_ms": 25000,
+    "stagger_ms": 150,
+    "m3u8_pattern": "https?://[^\\s\"'<>]+\\.m3u8[^\\s\"'<>]*",
+    "mp4_pattern": "https?://[^\\s\"'<>]+\\.mp4[^\\s\"'<>]*"
   },
   "feature_flags": {
     "subtitles_enabled": true,
@@ -252,7 +276,9 @@
     "maintenance_message": ""
   },
   "shorts": {
-    "reddit_base": "https://old.reddit.com",
+    "feed_base_url": "https://old.reddit.com",
+    "feed_referer": "https://www.reddit.com/",
+    "feed_origin": "https://www.reddit.com",
     "for_you_subs": "nextfuckinglevel+oddlysatisfying+funny+aww+BeAmazed+interestingasfuck+Unexpected+Damnthatsinteresting+sports+NatureIsFuckingLit",
     "categories": [
       { "label": "🔥 Hot",        "subs": "nextfuckinglevel+oddlysatisfying+Unexpected+interestingasfuck+BeAmazed" },
