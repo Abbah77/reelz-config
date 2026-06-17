@@ -266,6 +266,42 @@
     "m3u8_pattern": "https?://[^\\s\"'<>]+\\.m3u8[^\\s\"'<>]*",
     "mp4_pattern": "https?://[^\\s\"'<>]+\\.mp4[^\\s\"'<>]*"
   },
+  "tiers": {
+    "free": {
+      "max_resolution": "480p",
+      "max_resolution_height": 480,
+      "max_downloads": 5,
+      "ads_enabled": true,
+      "subtitles_manual_search": false,
+      "background_play": false,
+      "simultaneous_streams": 1
+    },
+    "premium": {
+      "max_resolution": "4K",
+      "max_resolution_height": 2160,
+      "max_downloads": -1,
+      "ads_enabled": false,
+      "subtitles_manual_search": true,
+      "background_play": true,
+      "simultaneous_streams": 2
+    }
+  },
+  "premium": {
+    "enabled": true,
+    "grace_period_days": 1,
+    "renew_warning_days_before": 3,
+    "monthly_price_ngn": 1500,
+    "yearly_price_ngn": 12000,
+    "contact_to_subscribe": "WhatsApp +234XXXXXXXXXX to subscribe",
+    "manual_grants": [
+      {
+        "email": "example@gmail.com",
+        "plan": "monthly",
+        "expires_at_ms": 0,
+        "note": "Sample row — delete this. email must be lowercase, exactly matching the Google account email. expires_at_ms is a Unix millisecond timestamp (e.g. https://www.epochconverter.com, pick a date, copy 'Timestamp in milliseconds'). Set to 0 to disable a grant without deleting the row."
+      }
+    ]
+  },
   "feature_flags": {
     "subtitles_enabled": true,
     "downloads_enabled": true,
