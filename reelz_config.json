@@ -1,11 +1,11 @@
 {
   "meta": {
     "schema_version": 1,
-    "config_version": 3,
+    "config_version": 4,
     "min_app_version": 1,
     "latest_app_version": 2,
     "latest_apk_url": "https://github.com/yourusername/reelz-releases/releases/latest/download/reelz.apk",
-    "changelog": "Full remote control over ads, sources and feed config"
+    "changelog": "Premium downloads now lock by resolution like streaming does. Subscriptions moved from WhatsApp to Paystack payment links. Ads UI polished with proper loading/empty states. Remove-ads banner added to Browse feed."
   },
   "tmdb": {
     "keys": [
@@ -292,7 +292,10 @@
     "renew_warning_days_before": 3,
     "monthly_price_ngn": 1500,
     "yearly_price_ngn": 12000,
-    "contact_to_subscribe": "WhatsApp +234XXXXXXXXXX to subscribe",
+    "paystack_monthly_url": "https://paystack.com/pay/REPLACE_WITH_YOUR_MONTHLY_PAYMENT_LINK",
+    "paystack_yearly_url": "https://paystack.com/pay/REPLACE_WITH_YOUR_YEARLY_PAYMENT_LINK",
+    "payment_note": "After paying, return here and tap \"I've already paid — refresh status\" once we've confirmed it on our end.",
+    "contact_to_subscribe": "",
     "manual_grants": [
       {
         "email": "example@gmail.com",
