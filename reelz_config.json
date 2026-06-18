@@ -1,11 +1,14 @@
 {
   "meta": {
     "schema_version": 1,
-    "config_version": 4,
+    "config_version": 5,
     "min_app_version": 1,
     "latest_app_version": 2,
     "latest_apk_url": "https://github.com/yourusername/reelz-releases/releases/latest/download/reelz.apk",
-    "changelog": "Premium downloads now lock by resolution like streaming does. Subscriptions moved from WhatsApp to Paystack payment links. Ads UI polished with proper loading/empty states. Remove-ads banner added to Browse feed."
+    "changelog": "Auth + subscription now backed by FastAPI backend on Render. Webhook is source of truth. Config gains backend_url field."
+  },
+  "backend": {
+    "backend_url": "https://YOUR-APP-NAME.onrender.com"
   },
   "tmdb": {
     "keys": [
@@ -294,14 +297,14 @@
     "yearly_price_ngn": 12000,
     "paystack_monthly_url": "https://paystack.com/pay/REPLACE_WITH_YOUR_MONTHLY_PAYMENT_LINK",
     "paystack_yearly_url": "https://paystack.com/pay/REPLACE_WITH_YOUR_YEARLY_PAYMENT_LINK",
-    "payment_note": "After paying, return here and tap \"I've already paid — refresh status\" once we've confirmed it on our end.",
+    "payment_note": "After paying, return here and tap \"I've already paid \u2014 refresh status\" once we've confirmed it on our end.",
     "contact_to_subscribe": "",
     "manual_grants": [
       {
         "email": "example@gmail.com",
         "plan": "monthly",
         "expires_at_ms": 0,
-        "note": "Sample row — delete this. email must be lowercase, exactly matching the Google account email. expires_at_ms is a Unix millisecond timestamp (e.g. https://www.epochconverter.com, pick a date, copy 'Timestamp in milliseconds'). Set to 0 to disable a grant without deleting the row."
+        "note": "Sample row \u2014 delete this. With the backend live, manual_grants are only a fallback for when the backend is unreachable."
       }
     ]
   },
@@ -320,14 +323,38 @@
     "feed_origin": "https://old.reddit.com",
     "for_you_subs": "nextfuckinglevel+oddlysatisfying+funny+aww+BeAmazed+interestingasfuck+Unexpected+Damnthatsinteresting+sports+NatureIsFuckingLit",
     "categories": [
-      { "label": "🔥 Hot",        "subs": "nextfuckinglevel+oddlysatisfying+Unexpected+interestingasfuck+BeAmazed" },
-      { "label": "😂 Funny",      "subs": "funny+facepalm+Whatcouldgowrong+therewasanattempt" },
-      { "label": "😮 WOW",        "subs": "nextfuckinglevel+BeAmazed+interestingasfuck+Damnthatsinteresting" },
-      { "label": "😌 Satisfying", "subs": "oddlysatisfying+ASMR+powerwashingporn+Perfectfit" },
-      { "label": "🐾 Animals",    "subs": "aww+AnimalsBeingBros+rarepuppers+NatureIsFuckingLit" },
-      { "label": "⚽ Sports",     "subs": "sports+soccer+nba+MMA+skateboarding" },
-      { "label": "🎨 Art",        "subs": "Art+blackmagicfuckery+specializedtools+crafts" },
-      { "label": "🌍 Nature",     "subs": "NatureIsFuckingLit+EarthPorn+interestingasfuck+Outdoors" }
+      {
+        "label": "\ud83d\udd25 Hot",
+        "subs": "nextfuckinglevel+oddlysatisfying+Unexpected+interestingasfuck+BeAmazed"
+      },
+      {
+        "label": "\ud83d\ude02 Funny",
+        "subs": "funny+facepalm+Whatcouldgowrong+therewasanattempt"
+      },
+      {
+        "label": "\ud83d\ude2e WOW",
+        "subs": "nextfuckinglevel+BeAmazed+interestingasfuck+Damnthatsinteresting"
+      },
+      {
+        "label": "\ud83d\ude0c Satisfying",
+        "subs": "oddlysatisfying+ASMR+powerwashingporn+Perfectfit"
+      },
+      {
+        "label": "\ud83d\udc3e Animals",
+        "subs": "aww+AnimalsBeingBros+rarepuppers+NatureIsFuckingLit"
+      },
+      {
+        "label": "\u26bd Sports",
+        "subs": "sports+soccer+nba+MMA+skateboarding"
+      },
+      {
+        "label": "\ud83c\udfa8 Art",
+        "subs": "Art+blackmagicfuckery+specializedtools+crafts"
+      },
+      {
+        "label": "\ud83c\udf0d Nature",
+        "subs": "NatureIsFuckingLit+EarthPorn+interestingasfuck+Outdoors"
+      }
     ]
   }
 }
