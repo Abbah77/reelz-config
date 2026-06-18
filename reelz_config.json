@@ -8,7 +8,7 @@
     "changelog": "Auth + subscription now backed by FastAPI backend on Render. Webhook is source of truth. Config gains backend_url field."
   },
   "backend": {
-    "backend_url": "https://YOUR-APP-NAME.onrender.com"
+    "backend_url": "https://tt-b577.onrender.com"
   },
   "tmdb": {
     "keys": [
