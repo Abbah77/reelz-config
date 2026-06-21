@@ -1,35 +1,20 @@
 {
   "meta": {
     "schema_version": 1,
-    "config_version": 5,
+    "config_version": 6,
     "min_app_version": 1,
     "latest_app_version": 2,
     "latest_apk_url": "https://github.com/yourusername/reelz-releases/releases/latest/download/reelz.apk",
-    "changelog": "Auth + subscription now backed by FastAPI backend on Render. Webhook is source of truth. Config gains backend_url field."
+    "changelog": "Shorts now powered by ifunny.club instead of Reddit."
   },
   "backend": {
     "backend_url": "https://tt-b577.onrender.com"
   },
   "tmdb": {
     "keys": [
-      {
-        "id": "k1",
-        "key": "1eef1496d59aa06f62e201ddce2741b4",
-        "weight": 10,
-        "enabled": true
-      },
-      {
-        "id": "k2",
-        "key": "84f1461a2d117abbd44d3add107188d0",
-        "weight": 8,
-        "enabled": false
-      },
-      {
-        "id": "k3",
-        "key": "b8f51b5206d37dbda94f6bab13ee2d38",
-        "weight": 6,
-        "enabled": false
-      }
+      { "id": "k1", "key": "1eef1496d59aa06f62e201ddce2741b4", "weight": 10, "enabled": true },
+      { "id": "k2", "key": "84f1461a2d117abbd44d3add107188d0", "weight": 8,  "enabled": false },
+      { "id": "k3", "key": "b8f51b5206d37dbda94f6bab13ee2d38", "weight": 6,  "enabled": false }
     ],
     "base_url": "https://api.themoviedb.org/3",
     "img_w500": "https://image.tmdb.org/t/p/w500",
@@ -43,18 +28,8 @@
         "name": "OpenSubtitles",
         "enabled": true,
         "keys": [
-          {
-            "id": "os_k1",
-            "key": "C8jjWBqYDBiM4U3QA9xJfmf8BiC2ISyq",
-            "weight": 10,
-            "enabled": true
-          },
-          {
-            "id": "os_k2",
-            "key": "YOUR_SECOND_OS_KEY",
-            "weight": 8,
-            "enabled": false
-          }
+          { "id": "os_k1", "key": "C8jjWBqYDBiM4U3QA9xJfmf8BiC2ISyq", "weight": 10, "enabled": true },
+          { "id": "os_k2", "key": "YOUR_SECOND_OS_KEY", "weight": 8, "enabled": false }
         ],
         "base_url": "https://api.opensubtitles.com/api/v1",
         "user_agent": "Reelz v2.0",
@@ -65,12 +40,7 @@
         "name": "SubDL",
         "enabled": false,
         "keys": [
-          {
-            "id": "sdl_k1",
-            "key": "YOUR_SUBDL_KEY",
-            "weight": 10,
-            "enabled": false
-          }
+          { "id": "sdl_k1", "key": "YOUR_SUBDL_KEY", "weight": 10, "enabled": false }
         ],
         "base_url": "https://api.subdl.com/api/v1",
         "user_agent": "Reelz v2.0",
@@ -118,142 +88,52 @@
   },
   "stream_sources": [
     {
-      "id": "source_1",
-      "name": "Source 1",
-      "enabled": true,
-      "priority": 0,
-      "requires_js": true,
-      "url_patterns": {
-        "movie": "https://vidlink.pro/movie/{tmdb_id}",
-        "tv": "https://vidlink.pro/tv/{tmdb_id}/{season}/{episode}"
-      },
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9"
-      },
-      "referer": "https://vidlink.pro/",
-      "origin": "https://vidlink.pro"
+      "id": "source_1", "name": "Source 1", "enabled": true, "priority": 0, "requires_js": true,
+      "url_patterns": { "movie": "https://vidlink.pro/movie/{tmdb_id}", "tv": "https://vidlink.pro/tv/{tmdb_id}/{season}/{episode}" },
+      "headers": { "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.9" },
+      "referer": "https://vidlink.pro/", "origin": "https://vidlink.pro"
     },
     {
-      "id": "source_2",
-      "name": "Source 2",
-      "enabled": true,
-      "priority": 1,
-      "requires_js": true,
-      "url_patterns": {
-        "movie": "https://vidsrc.to/embed/movie/{tmdb_id}",
-        "tv": "https://vidsrc.to/embed/tv/{tmdb_id}/{season}/{episode}"
-      },
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8",
-        "Accept-Language": "en-US,en;q=0.9"
-      },
-      "referer": "https://vidsrc.to/",
-      "origin": "https://vidsrc.to"
+      "id": "source_2", "name": "Source 2", "enabled": true, "priority": 1, "requires_js": true,
+      "url_patterns": { "movie": "https://vidsrc.to/embed/movie/{tmdb_id}", "tv": "https://vidsrc.to/embed/tv/{tmdb_id}/{season}/{episode}" },
+      "headers": { "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8", "Accept-Language": "en-US,en;q=0.9" },
+      "referer": "https://vidsrc.to/", "origin": "https://vidsrc.to"
     },
     {
-      "id": "source_3",
-      "name": "Source 3",
-      "enabled": true,
-      "priority": 2,
-      "requires_js": true,
-      "url_patterns": {
-        "movie": "https://vidsrc.me/embed/movie?tmdb={tmdb_id}",
-        "tv": "https://vidsrc.me/embed/tv?tmdb={tmdb_id}&season={season}&episode={episode}"
-      },
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
-      },
-      "referer": "https://vidsrc.me/",
-      "origin": "https://vidsrc.me"
+      "id": "source_3", "name": "Source 3", "enabled": true, "priority": 2, "requires_js": true,
+      "url_patterns": { "movie": "https://vidsrc.me/embed/movie?tmdb={tmdb_id}", "tv": "https://vidsrc.me/embed/tv?tmdb={tmdb_id}&season={season}&episode={episode}" },
+      "headers": { "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" },
+      "referer": "https://vidsrc.me/", "origin": "https://vidsrc.me"
     },
     {
-      "id": "source_4",
-      "name": "Source 4",
-      "enabled": true,
-      "priority": 3,
-      "requires_js": true,
-      "url_patterns": {
-        "movie": "https://www.2embed.cc/embed/{tmdb_id}",
-        "tv": "https://www.2embed.cc/embedtv/{tmdb_id}&s={season}&e={episode}"
-      },
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
-      },
-      "referer": "https://www.2embed.cc/",
-      "origin": "https://www.2embed.cc"
+      "id": "source_4", "name": "Source 4", "enabled": true, "priority": 3, "requires_js": true,
+      "url_patterns": { "movie": "https://www.2embed.cc/embed/{tmdb_id}", "tv": "https://www.2embed.cc/embedtv/{tmdb_id}&s={season}&e={episode}" },
+      "headers": { "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" },
+      "referer": "https://www.2embed.cc/", "origin": "https://www.2embed.cc"
     },
     {
-      "id": "source_5",
-      "name": "Source 5",
-      "enabled": true,
-      "priority": 4,
-      "requires_js": true,
-      "url_patterns": {
-        "movie": "https://embed.su/embed/movie/{tmdb_id}",
-        "tv": "https://embed.su/embed/tv/{tmdb_id}/{season}/{episode}"
-      },
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
-      },
-      "referer": "https://embed.su/",
-      "origin": "https://embed.su"
+      "id": "source_5", "name": "Source 5", "enabled": true, "priority": 4, "requires_js": true,
+      "url_patterns": { "movie": "https://embed.su/embed/movie/{tmdb_id}", "tv": "https://embed.su/embed/tv/{tmdb_id}/{season}/{episode}" },
+      "headers": { "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" },
+      "referer": "https://embed.su/", "origin": "https://embed.su"
     },
     {
-      "id": "source_6",
-      "name": "Source 6",
-      "enabled": false,
-      "priority": 5,
-      "requires_js": true,
-      "url_patterns": {
-        "movie": "https://superembed.stream/embed?tmdb={tmdb_id}&type=movie",
-        "tv": "https://superembed.stream/embed?tmdb={tmdb_id}&type=tv&season={season}&episode={episode}"
-      },
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
-      },
-      "referer": "https://superembed.stream/",
-      "origin": "https://superembed.stream"
+      "id": "source_6", "name": "Source 6", "enabled": false, "priority": 5, "requires_js": true,
+      "url_patterns": { "movie": "https://superembed.stream/embed?tmdb={tmdb_id}&type=movie", "tv": "https://superembed.stream/embed?tmdb={tmdb_id}&type=tv&season={season}&episode={episode}" },
+      "headers": { "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" },
+      "referer": "https://superembed.stream/", "origin": "https://superembed.stream"
     },
     {
-      "id": "source_7",
-      "name": "Source 7",
-      "enabled": false,
-      "priority": 6,
-      "requires_js": true,
-      "url_patterns": {
-        "movie": "https://autoembed.co/movie/tmdb/{tmdb_id}",
-        "tv": "https://autoembed.co/tv/tmdb/{tmdb_id}-{season}-{episode}"
-      },
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
-      },
-      "referer": "https://autoembed.co/",
-      "origin": "https://autoembed.co"
+      "id": "source_7", "name": "Source 7", "enabled": false, "priority": 6, "requires_js": true,
+      "url_patterns": { "movie": "https://autoembed.co/movie/tmdb/{tmdb_id}", "tv": "https://autoembed.co/tv/tmdb/{tmdb_id}-{season}-{episode}" },
+      "headers": { "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" },
+      "referer": "https://autoembed.co/", "origin": "https://autoembed.co"
     },
     {
-      "id": "source_8",
-      "name": "Source 8",
-      "enabled": false,
-      "priority": 7,
-      "requires_js": true,
-      "url_patterns": {
-        "movie": "https://embed.smashystream.com/playere.php?tmdb={tmdb_id}",
-        "tv": "https://embed.smashystream.com/playere.php?tmdb={tmdb_id}&season={season}&episode={episode}"
-      },
-      "headers": {
-        "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8"
-      },
-      "referer": "https://smashystream.com/",
-      "origin": "https://smashystream.com"
+      "id": "source_8", "name": "Source 8", "enabled": false, "priority": 7, "requires_js": true,
+      "url_patterns": { "movie": "https://embed.smashystream.com/playere.php?tmdb={tmdb_id}", "tv": "https://embed.smashystream.com/playere.php?tmdb={tmdb_id}&season={season}&episode={episode}" },
+      "headers": { "User-Agent": "Mozilla/5.0 (Linux; Android 14; Pixel 8) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Mobile Safari/537.36", "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,*/*;q=0.8" },
+      "referer": "https://smashystream.com/", "origin": "https://smashystream.com"
     }
   ],
   "user_agents": {
@@ -270,24 +150,8 @@
     "mp4_pattern": "https?://[^\\s\"'<>]+\\.mp4[^\\s\"'<>]*"
   },
   "tiers": {
-    "free": {
-      "max_resolution": "480p",
-      "max_resolution_height": 480,
-      "max_downloads": 5,
-      "ads_enabled": true,
-      "subtitles_manual_search": false,
-      "background_play": false,
-      "simultaneous_streams": 1
-    },
-    "premium": {
-      "max_resolution": "4K",
-      "max_resolution_height": 2160,
-      "max_downloads": -1,
-      "ads_enabled": false,
-      "subtitles_manual_search": true,
-      "background_play": true,
-      "simultaneous_streams": 2
-    }
+    "free":    { "max_resolution": "480p", "max_resolution_height": 480,  "max_downloads": 5,  "ads_enabled": true,  "subtitles_manual_search": false, "background_play": false, "simultaneous_streams": 1 },
+    "premium": { "max_resolution": "4K",   "max_resolution_height": 2160, "max_downloads": -1, "ads_enabled": false, "subtitles_manual_search": true,  "background_play": true,  "simultaneous_streams": 2 }
   },
   "premium": {
     "enabled": true,
@@ -297,15 +161,10 @@
     "yearly_price_ngn": 12000,
     "paystack_monthly_url": "https://paystack.com/pay/REPLACE_WITH_YOUR_MONTHLY_PAYMENT_LINK",
     "paystack_yearly_url": "https://paystack.com/pay/REPLACE_WITH_YOUR_YEARLY_PAYMENT_LINK",
-    "payment_note": "After paying, return here and tap \"I've already paid \u2014 refresh status\" once we've confirmed it on our end.",
+    "payment_note": "After paying, return here and tap \"I've already paid — refresh status\" once we've confirmed it on our end.",
     "contact_to_subscribe": "",
     "manual_grants": [
-      {
-        "email": "example@gmail.com",
-        "plan": "monthly",
-        "expires_at_ms": 0,
-        "note": "Sample row \u2014 delete this. With the backend live, manual_grants are only a fallback for when the backend is unreachable."
-      }
+      { "email": "example@gmail.com", "plan": "monthly", "expires_at_ms": 0, "note": "Sample row — delete this." }
     ]
   },
   "feature_flags": {
@@ -318,43 +177,19 @@
     "maintenance_message": ""
   },
   "shorts": {
-    "feed_base_url": "https://old.reddit.com",
-    "feed_referer": "https://old.reddit.com/",
-    "feed_origin": "https://old.reddit.com",
-    "for_you_subs": "nextfuckinglevel+oddlysatisfying+funny+aww+BeAmazed+interestingasfuck+Unexpected+Damnthatsinteresting+sports+NatureIsFuckingLit",
+    "feed_base_url": "https://ifunny.club",
+    "feed_referer": "https://ifunny.club/",
+    "feed_origin": "https://ifunny.club",
+    "for_you_subs": "lol-loop-GfRk3IGcil2+funny-nigerians-yDNjGC3D2X9+naija-life-WTb8G0rmLC5+wow-clips-wcmpapcKPi5+meme-and-scream-yvTjtEYXgS4+unexpected-clips+sports-zone-GtetQfWpAXa+anime-whispers-oGLYvllvpT6",
     "categories": [
-      {
-        "label": "\ud83d\udd25 Hot",
-        "subs": "nextfuckinglevel+oddlysatisfying+Unexpected+interestingasfuck+BeAmazed"
-      },
-      {
-        "label": "\ud83d\ude02 Funny",
-        "subs": "funny+facepalm+Whatcouldgowrong+therewasanattempt"
-      },
-      {
-        "label": "\ud83d\ude2e WOW",
-        "subs": "nextfuckinglevel+BeAmazed+interestingasfuck+Damnthatsinteresting"
-      },
-      {
-        "label": "\ud83d\ude0c Satisfying",
-        "subs": "oddlysatisfying+ASMR+powerwashingporn+Perfectfit"
-      },
-      {
-        "label": "\ud83d\udc3e Animals",
-        "subs": "aww+AnimalsBeingBros+rarepuppers+NatureIsFuckingLit"
-      },
-      {
-        "label": "\u26bd Sports",
-        "subs": "sports+soccer+nba+MMA+skateboarding"
-      },
-      {
-        "label": "\ud83c\udfa8 Art",
-        "subs": "Art+blackmagicfuckery+specializedtools+crafts"
-      },
-      {
-        "label": "\ud83c\udf0d Nature",
-        "subs": "NatureIsFuckingLit+EarthPorn+interestingasfuck+Outdoors"
-      }
+      { "label": "😂 Funny",   "subs": "lol-loop-GfRk3IGcil2+funny-nigerians-yDNjGC3D2X9+meme-and-scream-yvTjtEYXgS4" },
+      { "label": "🔥 Hot",     "subs": "wow-clips-wcmpapcKPi5+naija-life-WTb8G0rmLC5+lol-loop-GfRk3IGcil2" },
+      { "label": "😮 WOW",     "subs": "wow-clips-wcmpapcKPi5+relaxing-central-GjlDo5NSwv5" },
+      { "label": "🇳🇬 Naija",  "subs": "funny-nigerians-yDNjGC3D2X9+naija-life-WTb8G0rmLC5" },
+      { "label": "⚽ Sports",  "subs": "sports-zone-GtetQfWpAXa" },
+      { "label": "🎌 Anime",   "subs": "anime-whispers-oGLYvllvpT6" },
+      { "label": "😍 Love",    "subs": "love-lounge-KzOyQ0fZ0E4" },
+      { "label": "🎬 Movies",  "subs": "netflix-and-more-GHlH5Uah4Y6+us-hit-movies-w2NYvSo3Yya" }
     ]
   }
 }
