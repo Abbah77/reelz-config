@@ -1,11 +1,11 @@
 {
   "meta": {
     "schema_version": 1,
-    "config_version": 6,
+    "config_version": 7,
     "min_app_version": 1,
     "latest_app_version": 2,
     "latest_apk_url": "https://github.com/yourusername/reelz-releases/releases/latest/download/reelz.apk",
-    "changelog": "Shorts now powered by ifunny.club instead of Reddit."
+    "changelog": "Shorts now fully backend-powered via ifunny.club scraper."
   },
   "backend": {
     "backend_url": "https://tt-b577.onrender.com"
@@ -147,7 +147,7 @@
     "global_timeout_ms": 25000,
     "stagger_ms": 150,
     "m3u8_pattern": "https?://[^\\s\"'<>]+\\.m3u8[^\\s\"'<>]*",
-    "mp4_pattern": "https?://[^\\s\"'<>]+\\.mp4[^\\s\"'<>]*"
+    "mp4_pattern":  "https?://[^\\s\"'<>]+\\.mp4[^\\s\"'<>]*"
   },
   "tiers": {
     "free":    { "max_resolution": "480p", "max_resolution_height": 480,  "max_downloads": 5,  "ads_enabled": true,  "subtitles_manual_search": false, "background_play": false, "simultaneous_streams": 1 },
@@ -160,7 +160,7 @@
     "monthly_price_ngn": 1500,
     "yearly_price_ngn": 12000,
     "paystack_monthly_url": "https://paystack.com/pay/REPLACE_WITH_YOUR_MONTHLY_PAYMENT_LINK",
-    "paystack_yearly_url": "https://paystack.com/pay/REPLACE_WITH_YOUR_YEARLY_PAYMENT_LINK",
+    "paystack_yearly_url":  "https://paystack.com/pay/REPLACE_WITH_YOUR_YEARLY_PAYMENT_LINK",
     "payment_note": "After paying, return here and tap \"I've already paid — refresh status\" once we've confirmed it on our end.",
     "contact_to_subscribe": "",
     "manual_grants": [
@@ -178,18 +178,21 @@
   },
   "shorts": {
     "feed_base_url": "https://ifunny.club",
-    "feed_referer": "https://ifunny.club/",
-    "feed_origin": "https://ifunny.club",
-    "for_you_subs": "lol-loop-GfRk3IGcil2+funny-nigerians-yDNjGC3D2X9+naija-life-WTb8G0rmLC5+wow-clips-wcmpapcKPi5+meme-and-scream-yvTjtEYXgS4+unexpected-clips+sports-zone-GtetQfWpAXa+anime-whispers-oGLYvllvpT6",
+    "feed_referer":  "https://ifunny.club/",
+    "feed_origin":   "https://ifunny.club",
+
+    "for_you_subs": "lol-loop-GfRk3IGcil2+meme-and-scream-yvTjtEYXgS4+netflix-and-more-GHlH5Uah4Y6+shorttv-QIHhE5Hp1m5+tips-and-tricks-ej6mvzgNp3+what-to-watch-Iqy0R3deCq2+funny-nigerians-yDNjGC3D2X9+naija-life-WTb8G0rmLC5+wow-clips-wcmpapcKPi5+sports-zone-GtetQfWpAXa",
+
     "categories": [
-      { "label": "😂 Funny",   "subs": "lol-loop-GfRk3IGcil2+funny-nigerians-yDNjGC3D2X9+meme-and-scream-yvTjtEYXgS4" },
-      { "label": "🔥 Hot",     "subs": "wow-clips-wcmpapcKPi5+naija-life-WTb8G0rmLC5+lol-loop-GfRk3IGcil2" },
-      { "label": "😮 WOW",     "subs": "wow-clips-wcmpapcKPi5+relaxing-central-GjlDo5NSwv5" },
-      { "label": "🇳🇬 Naija",  "subs": "funny-nigerians-yDNjGC3D2X9+naija-life-WTb8G0rmLC5" },
-      { "label": "⚽ Sports",  "subs": "sports-zone-GtetQfWpAXa" },
-      { "label": "🎌 Anime",   "subs": "anime-whispers-oGLYvllvpT6" },
-      { "label": "😍 Love",    "subs": "love-lounge-KzOyQ0fZ0E4" },
-      { "label": "🎬 Movies",  "subs": "netflix-and-more-GHlH5Uah4Y6+us-hit-movies-w2NYvSo3Yya" }
+      { "label": "😂 Funny",    "subs": "lol-loop-GfRk3IGcil2+meme-and-scream-yvTjtEYXgS4+funny-nigerians-yDNjGC3D2X9" },
+      { "label": "🎬 Movies",   "subs": "netflix-and-more-GHlH5Uah4Y6+what-to-watch-Iqy0R3deCq2+shorttv-QIHhE5Hp1m5" },
+      { "label": "📺 Short TV", "subs": "shorttv-QIHhE5Hp1m5+what-to-watch-Iqy0R3deCq2" },
+      { "label": "💡 Tips",     "subs": "tips-and-tricks-ej6mvzgNp3" },
+      { "label": "🔥 Hot",      "subs": "wow-clips-wcmpapcKPi5+naija-life-WTb8G0rmLC5+lol-loop-GfRk3IGcil2" },
+      { "label": "🇳🇬 Naija",   "subs": "funny-nigerians-yDNjGC3D2X9+naija-life-WTb8G0rmLC5" },
+      { "label": "⚽ Sports",   "subs": "sports-zone-GtetQfWpAXa" },
+      { "label": "😮 WOW",      "subs": "wow-clips-wcmpapcKPi5" }
     ]
   }
 }
+
