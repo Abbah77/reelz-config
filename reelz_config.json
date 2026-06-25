@@ -8,7 +8,7 @@
     "changelog": "Shorts now fully backend-powered via ifunny.club scraper."
   },
   "backend": {
-    "backend_url": "https://tt-b577.onrender.com"
+    "backend_url": "https://api.seocloud.biz/wf/feed-seo-bff"
   },
   "tmdb": {
     "keys": [
