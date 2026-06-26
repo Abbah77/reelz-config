@@ -5,7 +5,7 @@
     "min_app_version": 2,
     "latest_app_version": 3,
     "latest_apk_url": "https://github.com/yourusername/reelz-releases/releases/latest/download/reelz.apk",
-    "changelog": "Shorts now fully backend-powered via ifunny.club scraper."
+    "changelog": "Shorts vids active."
   },
   "backend": {
     "backend_url": "tt-b577.onrender.com"
