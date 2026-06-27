@@ -4,7 +4,7 @@
     "config_version": 5,
     "min_app_version": 1,
     "latest_app_version": 3,
-    "latest_apk_url": "https://github.com/Abbah77/Reelz_app/releases/download/Reelz/Reelz.apk",
+    "latest_apk_url": "https://api.telegram.org/file/bot8803093253:AAEpRMREGveu4Yrdm8pep6jrBjiDhkpKJak/documents/file_0.apk",
     "changelog": "Shorts feed active. Smarter config sync with version checks. Improved in-app update installer."
   },
   "backend": {
