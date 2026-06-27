@@ -4,7 +4,7 @@
     "config_version": 3,
     "min_app_version": 1,
     "latest_app_version": 3,
-    "latest_apk_url": "https://github.com/Abbah77/Reelz_app/releases/download/Reelz/app-release.apk",
+    "latest_apk_url": "https://github.com/Abbah77/Reelz_app/releases/download/Reelz/Reelz.apk",
     "changelog": "Shorts feed active. Smarter config sync with version checks. Improved in-app update installer."
   },
   "backend": {
